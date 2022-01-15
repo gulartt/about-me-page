@@ -1,0 +1,807 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+  overflow-x: hidden;
+  background-color: #f1faee;
+  scroll-behavior: smooth;
+}
+
+.header-page {
+  background-color: #e63946;
+  color: #f1faee;
+  padding: 0 1em;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.header-page h1 {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+
+.header-page .menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  background-color: #1d3557;
+  width: 100vw;
+  height: 91vh;
+  letter-spacing: 3px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s ease-in;
+  transition: -webkit-transform .5s ease-in;
+  transition: transform .5s ease-in;
+  transition: transform .5s ease-in, -webkit-transform .5s ease-in;
+}
+
+.header-page .menu-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0;
+  position: relative;
+  outline: none;
+}
+
+.header-page .menu-list a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: .3s transform ease-in;
+  transition: .3s transform ease-in;
+}
+
+.header-page .menu-list a:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.header-page .menu-list a:focus:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.header-page .menu-list.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.header-page .button-menu {
+  cursor: pointer;
+}
+
+.header-page .button-menu i {
+  font-size: 2.5em;
+}
+
+.about-me {
+  min-height: 100vh;
+  padding: 4em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2em;
+}
+
+.about-me .me-text {
+  height: 50%;
+}
+
+.about-me .me-text h1 {
+  font-weight: 900;
+  font-style: italic;
+  margin: 0 0 .3em .1em;
+  font-size: 2.5em;
+  color: #e63946;
+}
+
+.about-me .me-text p {
+  text-align: right;
+  padding: 0 .5em;
+}
+
+.about-me .me-picture {
+  width: 16em;
+  height: 16em;
+  margin-bottom: 2em;
+}
+
+.about-me .me-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.music-section {
+  min-height: 100vh;
+  padding: 4em 2em;
+  background-color: #1d3557;
+  color: #f1faee;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin: auto;
+  font-size: 1.1em;
+  position: relative;
+}
+
+.music-section .waves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.music-section .waves svg {
+  width: 180%;
+}
+
+.music-section .intro-music {
+  margin-bottom: 2.2em;
+  z-index: 1;
+  padding: 1em;
+}
+
+.music-section .intro-music h1 {
+  font-size: 2.2em;
+  margin-bottom: .3em;
+  font-weight: 900;
+}
+
+.music-section .list-artists, .music-section .list-musics, .music-section .list-albums {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+.music-section .list-artists h1, .music-section .list-musics h1, .music-section .list-albums h1 {
+  color: #457b9d;
+  font-size: 2em;
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.music-section .list-artists li, .music-section .list-musics li, .music-section .list-albums li {
+  margin: .2em 0;
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.music-section .list-musics {
+  z-index: 1;
+}
+
+.music-section .list-musics h1 {
+  color: #a8dadc;
+}
+
+.fav-games {
+  min-height: 100vh;
+  padding: 4em 2em;
+  overflow: hidden;
+  position: relative;
+}
+
+.fav-games .intro-games {
+  min-height: 10vh;
+  height: auto;
+  text-align: center;
+  padding: 1em;
+  z-index: 1000;
+  position: relative;
+}
+
+.fav-games .intro-games h1 {
+  font-size: 2.2em;
+  margin-bottom: .3em;
+  font-weight: 900;
+  color: #1d3557;
+}
+
+.fav-games .cards-container {
+  min-height: 90vh;
+  height: auto;
+}
+
+.fav-games .cards-container .game-card {
+  margin: 1em auto;
+  background-color: #457b9d;
+  width: 70%;
+  max-width: 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, black 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, black 0px 8px 16px -8px;
+  padding: .5em;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: ease-out .3s;
+  transition: ease-out .3s;
+  outline: none;
+}
+
+.fav-games .cards-container .game-card .card-text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding: 0 .1em;
+}
+
+.fav-games .cards-container .game-card img {
+  margin: .2em 0;
+  height: 190px;
+  -webkit-transition: ease-out .3s;
+  transition: ease-out .3s;
+}
+
+.fav-games .cards-container .game-card h2 {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.fav-games .cards-container .game-card:focus {
+  padding: 2em;
+  color: white;
+}
+
+.fav-games .cards-container .game-card:focus img {
+  height: 210px;
+}
+
+.fav-games .cards-container .game-card:hover {
+  padding: 2em;
+  color: white;
+}
+
+.fav-games .cards-container .game-card:hover img {
+  height: 210px;
+}
+
+.fav-games .cards-container .spiderman-game {
+  background-color: #e63946;
+}
+
+.fav-games:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: lightblue;
+  display: block;
+  min-height: 200vh;
+  width: 50vw;
+}
+
+.my-projects {
+  min-height: 100vh;
+  padding: 4em 2em;
+  background-color: #1d3557;
+  color: #f1faee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.my-projects .intro-projects {
+  min-height: 10vh;
+  height: auto;
+  text-align: center;
+  padding: 1em;
+}
+
+.my-projects .intro-projects h1 {
+  font-size: 2.2em;
+  margin-bottom: .3em;
+  font-weight: 900;
+}
+
+.my-projects .projects-list {
+  min-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.my-projects .projects-list .project-div {
+  padding: 1em .5em;
+  text-align: center;
+}
+
+.my-projects .projects-list .project-div h2 {
+  text-align: left;
+}
+
+.my-projects .projects-list .project-div img {
+  display: block;
+  height: 5em;
+  margin: .8em auto;
+}
+
+.my-projects .projects-list .project-div p {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.my-projects .projects-list .project-div p a {
+  color: inherit;
+}
+
+.my-projects .my-skills {
+  min-height: 10vh;
+  height: auto;
+  text-align: center;
+  padding: 1em;
+}
+
+.my-projects .my-skills h2 {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.my-projects .my-skills .skills-icons {
+  margin: 1em auto 0;
+  min-height: 8vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+
+.my-projects .my-skills .skills-icons i {
+  font-size: 2em;
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding: 4em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-section .intro-contact {
+  min-height: 10vh;
+  padding: 1em;
+  text-align: center;
+}
+
+.contact-section .intro-contact h1 {
+  font-size: 2.2em;
+  margin-bottom: .3em;
+  font-weight: 900;
+}
+
+.contact-section .intro-contact .social-medias {
+  margin-top: .5em;
+  font-size: 1.5em;
+}
+
+.contact-section .intro-contact .social-medias a {
+  color: inherit;
+  -webkit-transition: ease-out .2s color;
+  transition: ease-out .2s color;
+  outline: none;
+}
+
+.contact-section .intro-contact .social-medias a i {
+  margin: 0 .3em;
+}
+
+.contact-section .intro-contact .social-medias a:hover {
+  color: #e63946;
+}
+
+.contact-section .intro-contact .social-medias a:focus {
+  color: #e63946;
+}
+
+.contact-section .contact-me {
+  min-height: 45vh;
+  width: 100%;
+}
+
+.contact-section .contact-me form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact-section .contact-me form label {
+  font-weight: 800;
+}
+
+.contact-section .contact-me form #input-email, .contact-section .contact-me form #input-name, .contact-section .contact-me form #button-input {
+  margin: .5em 0;
+  border: none;
+  padding: 1em;
+  min-height: 3.5em;
+  width: 100%;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+  outline: none;
+}
+
+.contact-section .contact-me form #input-email::-webkit-input-placeholder, .contact-section .contact-me form #input-name::-webkit-input-placeholder, .contact-section .contact-me form #button-input::-webkit-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-email:-ms-input-placeholder, .contact-section .contact-me form #input-name:-ms-input-placeholder, .contact-section .contact-me form #button-input:-ms-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-email::-ms-input-placeholder, .contact-section .contact-me form #input-name::-ms-input-placeholder, .contact-section .contact-me form #button-input::-ms-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-email::placeholder, .contact-section .contact-me form #input-name::placeholder, .contact-section .contact-me form #button-input::placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-message {
+  resize: none;
+  min-height: 10em;
+  margin: .5em 0;
+  border: none;
+  padding: 1em;
+  width: 100%;
+}
+
+.contact-section .contact-me form #input-message::-webkit-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-message:-ms-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-message::-ms-input-placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #input-message::placeholder {
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.contact-section .contact-me form #button-input:hover {
+  background-color: #457b9d;
+  color: #f1faee;
+}
+
+.contact-section .contact-me form #button-input:focus {
+  color: #f1faee;
+  background-color: #457b9d;
+}
+
+footer {
+  background-color: #1d3557;
+  color: #f1faee;
+  padding: 1em;
+  text-align: center;
+}
+
+@-webkit-keyframes slideLinks {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideLinks {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@media (min-width: 700px) {
+  .header-page .menu-list {
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: unset;
+    width: unset;
+    background-color: unset;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  .header-page .menu-list a {
+    margin: 0 .8em;
+    opacity: 1;
+  }
+  .header-page .button-menu {
+    display: none;
+  }
+  .about-me {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 0;
+  }
+  .about-me .me-text {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .about-me .me-text h1 {
+    font-size: 3.5em;
+  }
+  .about-me .me-text p {
+    font-size: 1.2em;
+  }
+  .music-section {
+    font-size: 1.3em;
+  }
+  .music-section .waves svg {
+    width: 150%;
+  }
+  .music-section .intro-music {
+    margin-top: 1em;
+    font-size: 1.1em;
+  }
+  .music-section .intro-music h1 {
+    font-size: 2.3em;
+  }
+  .music-section .my-lists {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    margin: auto 0;
+  }
+  .music-section .my-lists .list-artists h1, .music-section .my-lists .list-musics h1, .music-section .my-lists .list-albums h1 {
+    font-size: 2.2em;
+  }
+  .music-section .my-lists .list-artists li, .music-section .my-lists .list-musics li, .music-section .my-lists .list-albums li {
+    margin: .3em 0;
+  }
+  .fav-games {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .fav-games .intro-games {
+    min-height: 20vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .fav-games .intro-games h1 {
+    font-size: 3em;
+  }
+  .fav-games .intro-games p {
+    font-size: 1.3em;
+  }
+  .fav-games .cards-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 80vh;
+  }
+  .fav-games .cards-container .game-card {
+    margin: 0 2%;
+    width: 30%;
+    height: 50vh;
+  }
+  .fav-games .cards-container .game-card img {
+    margin: 1em 0;
+  }
+  .fav-games .cards-container .game-card h2 {
+    font-size: 1.7em;
+  }
+  .fav-games .cards-container .game-card p {
+    font-size: 1.2em;
+  }
+  .my-projects {
+    padding-bottom: 1em;
+  }
+  .my-projects .intro-projects h1 {
+    font-size: 3em;
+  }
+  .my-projects .intro-projects p {
+    font-size: 1.3em;
+  }
+  .my-projects .projects-list {
+    font-size: 1.1em;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-gap: 2em;
+    margin-bottom: 1.5em;
+  }
+  .my-projects .projects-list .project-div {
+    height: 40vh;
+  }
+  .my-projects .projects-list .project-div h2 {
+    font-size: 2.2em;
+  }
+  .contact-section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-bottom: 0;
+  }
+  .contact-section .intro-contact {
+    width: 40vw;
+    min-height: 100%;
+  }
+  .contact-section .intro-contact h1 {
+    font-size: 3em;
+  }
+  .contact-section .intro-contact p {
+    font-size: 1.3em;
+  }
+  .contact-section .contact-me {
+    width: 40vw;
+    min-height: 100%;
+  }
+  .contact-section .contact-me #button-input {
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=style.css.map */
